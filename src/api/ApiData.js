@@ -124,12 +124,31 @@ export const apiUserDelete = (id) => {
 
 //----- 博客系统 start ---------------------------------------------------------------
 
-// 类目：分页查询列表
+// 博客系统：分页查询分类列表
 export const apiBlogSystemCategoryGetPageList = (currentPage) => {
   return request({
     url: '/erwin-cloud-blog/api-admin/category/page/' + currentPage,
     method: 'get',
     data: {}
+  })
+}
+
+// 博客系统：根据ID修改分类
+export const apiBlogSystemCategoryUpdateById = (id, data) => {
+  return request({
+    url: '/erwin-cloud-blog/api-admin/category/' + id,
+    method: 'put',
+    data: {},
+    params: data
+  })
+}
+
+// 博客系统：添加分类
+export const apiBlogSystemCategoryAdd = (data) => {
+  return request({
+    url: '/erwin-cloud-blog/api-admin/category',
+    method: 'post',
+    data: data
   })
 }
 
